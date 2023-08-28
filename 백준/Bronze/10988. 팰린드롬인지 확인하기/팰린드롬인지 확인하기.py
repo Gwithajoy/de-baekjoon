@@ -1,7 +1,7 @@
-string = input()
-a = string[::-1]
+letter = input()
+backward = letter[-1:-(len(letter)+1):-1]
 
-if string == a:
+if letter == backward:
   print(1)
 else:
   print(0)
