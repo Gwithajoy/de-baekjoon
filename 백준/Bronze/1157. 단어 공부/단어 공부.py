@@ -1,13 +1,16 @@
-words = input().upper()
-unique_words = list(set(words))
+word = input().lower()
+a = list(set(word))
 
-cnt_list = []
-for x in unique_words :
-    cnt = words.count(x)
-    cnt_list.append(cnt)
+dct = {}
+for i in range(len(a)):
+    b = a[i]
+    c = word.count(b)
+    dct[b] = c
 
-if cnt_list.count(max(cnt_list)) > 1 :
-    print('?')
-else :
-    max_index = cnt_list.index(max(cnt_list))
-    print(unique_words[max_index])
+max_values = max(dct.values())
+max_keys = [key for key, values in dct.items() if values == max_values]
+
+if len(max_keys)==1:
+  print(max_keys[0].upper())
+else:
+  print("?")
