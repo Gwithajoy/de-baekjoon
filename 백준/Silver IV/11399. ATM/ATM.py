@@ -1,10 +1,9 @@
 N = int(input())
-withdraw_time = list(map(int,input().split()))
+withdraw_time = list(map(int, input().split()))
 withdraw_time.sort()
 
-all_time_lst = []
-spent_time = 0
-for i in withdraw_time:
-  spent_time += i
-  all_time_lst.append(spent_time)
-print(sum(all_time_lst))
+total_time = 0
+for i in range(N):
+    total_time += withdraw_time[i] * (N - i)
+
+print(total_time)
